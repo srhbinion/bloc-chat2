@@ -1,0 +1,69 @@
+<!--Logo box -->
+<div class="logo-box">
+    <img src="/assets/images/bChat3.png" alt="bloc chat logo">
+</div>
+<!--Title bar-->
+<div class="title-bar">
+    <h1>{{current.name}}</h1>
+</div>
+<!--Navigation & list of chat rooms-->
+<nav class="navbar">
+    <!--Chat rooms-->
+    <form class="nav-list-first" ng-submit="chatRooms.add(room)">
+        <!--Create a chat room name-->
+        <input placeholder="Create Room..." ng-model="newRoomName"/>
+        <!--button that pushes room name to firebase-->
+        <button class="sign-bar" class ="ng-pristine" type="submit">Go!</button>
+    </form>
+    <!--List of all current chat rooms-->
+	<div>
+		<h3 class="room-list-first">Active: {{ chatRooms.room.length }}</h3>
+		<ol>
+			<li type="list" class="nav-list" ng-repeat="room in chatRooms.room">
+				<!--Current room template -->
+				<p class="room-name" ng-click="chatRooms.set(room)">Room {{ $index + 1 }}: {{ room.name | limitTo:25 }}</p>
+				<!-- button that DELETE a room from firebase -->
+				<p class="room-remove" type="click" ng-click="chatRooms.remove(room)">X</p>
+			</li>
+		</ol>
+	</div>
+</nav>
+<!--User name-->
+<div class="user-name">
+	<img src="/assets/images/user.png" alt="bloc chat logo">
+	<h3>User Name: {{currentUserName.show}}</h3>
+</div>
+<!--Message display area-->
+<div class="body-pannel">
+    <div class="hero-content" ng-hide="current.roomId">
+		<div class="astroleft">
+			<img src="/assets/images/AstroNoT2.png" alt="illustration of astronaut">
+		</div>
+        <h2 class="logo-name">{{welcome}}</h2>
+		<div class="astroright">
+			<img src="/assets/images/AstroNoT.png" alt="illustration of astronaut" >
+		</div>
+    </div>
+    <!--List of all current message in a selected room-->
+	<div class="body-pannel-chat" ng-show="current.roomId">
+		<!--Message template-->
+		<ol>
+			<li type="list" ng-repeat="msg in messages" ng-show="current.roomId == msg.roomId">
+				<img src="/assets/images/user.png" alt="bloc chat logo">
+				<!--button that deletes message from firebase -->
+				<p class="message-remove" ng-click="chatMessages.remove(msg)" type="click">X</p>
+				<p class="message-date">{{msg.sentAt| date:"MM/dd/yyyy 'at' h:mma"}}</p>
+				<p class="message-user">{{msg.userName}} : <span class="message-content">{{msg.content}}</span></p>
+			</li>
+		</ol>
+	</div>
+</div>
+<!--Create a message/ footer-->
+<div class="footer-bar" ng-show="current.roomId">
+    <form class="search-bar" ng-submit="chatMessages.add()">
+        <!--form box to input text -->
+        <input placeholder="Type a message..." ng-model="msgText"/>
+        <!--button that adds message to firebase -->
+        <button class="links-container" type="submit">Submit</button>
+    </form>
+</div>

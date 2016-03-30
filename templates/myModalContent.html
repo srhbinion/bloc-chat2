@@ -1,0 +1,22 @@
+<!--Modal to propmt a username-->
+<div class="username-modal">
+    <div class="modal-header">
+        <!--Message to users to add name-->
+        <h3 class="modal-title">Oops! You need to add a user name to use BinChat.</h3>
+    </div>
+    <div class="modal-body">
+        <form class="user-name">
+            <p>User Name:</p>
+            <!--adds and stores a user name to cookieStore array and newUserName model-->
+            <input placeholder="Create User Name..." ng-model="newUserName"/>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <!--adds and stores a user name to cookieStore array-->
+        <button class="btn btn-primary" type="submit" ng-click="userName.add(newUserName)">Add</button>
+        <!--removes a user name to cookieStore array-->
+        <button class="btn btn-primary" type="submit" ng-click="userName.remove(newUserName)">Remove</button>
+        <!--dismisses request results in no change to cookieStore array-->
+        <button class="btn btn-warning" type="button" ng-click="userName.cancel()">Cancel</button>
+    </div>
+</div>
