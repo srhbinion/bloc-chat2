@@ -23,7 +23,7 @@ binChat.config(function($locationProvider, $stateProvider) {
     $stateProvider
 		.state("landing",{
 			// properties of the state listed in "controller"
-			url: "http://bchattwo.obsidianpixel.com/",
+			url: " ",
 			controller:"LandingController",
 			templateUrl:"/templates/landing.html"
     });
