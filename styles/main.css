@@ -35,13 +35,30 @@ h3 {
   text-transform: uppercase;
   font-size: 1.1em;
   display: inline-block;
-  margin-left: 10%; }
+  margin-left: 10%; 
+}
+
+h4 {
+  color:#007984;
+  text-transform: uppercase;
+  font-size: 1.1em; 
+}
+
+.username-modal{
+ width: 295px;
+}
+
+.modal-body{
+    color:red;
+}
 
 img {
-  margin-left: 0%; }
+  margin-left: 0%; 
+}
 
 a {
-  margin: 5%; }
+  margin: 5%; 
+}
 
 ol {
   margin: 3%;
@@ -50,10 +67,17 @@ ol {
   list-style: none; }
 
 li {
-  padding: 5%;
-  margin: 0;
-  color: aliceblue; }
+  position:relative;
+  left: 5px;
+  float:left;
+  color:red;
+  list-style-type: none;
+  margin:2%;
+  display: inline-grid;
+}
 
+
+/* Navigation */
 .logo-box {
   position: fixed;
   top: 0px;
@@ -159,6 +183,7 @@ li {
   border-right: 1px solid #d2d2d2;
   min-width: 325px; }
 
+/* Body Panel */
 .body-pannel {
   position: fixed;
   top: 75px;
@@ -179,21 +204,7 @@ li {
   background-size: cover;
   height: 100%; }
 
-.body-pannel-chat {
-  position: fixed;
-  top: 75px;
-  right: 0px;
-  height: 100%;
-  width: 75%;
-  padding-top: 10px;
-  padding-bottom: 150px;
-  padding-right: 2%;
-  padding-left: 2%;
-  background-color: whitesmoke;
-  border: 1px solid #d5d5d5;
-  display: inline-block;
-  overflow: scroll; }
-
+/* Welcome Screen */
 .astroleft {
   position: relative;
   top: 5em;
@@ -212,9 +223,23 @@ li {
     padding: 7% 3% 7% 3%;
     border: 5px solid white;
     border-radius: 5%;
-    
-    
 }
+
+/* Message Page */
+.body-pannel-chat {
+  position: fixed;
+  top: 75px;
+  right: 0px;
+  height: 100%;
+  width: 75%;
+  padding-top: 10px;
+  padding-bottom: 150px;
+  padding-right: 2%;
+  padding-left: 2%;
+  background-color: whitesmoke;
+  border: 1px solid #d5d5d5;
+  display: inline-block;
+  overflow: scroll; }
 
 .message-remove {
   padding: 0%;
@@ -299,21 +324,25 @@ li {
   text-decoration: none; }
 
 .btn {
+  text-decoration: none; 
+  background: #007984;
+  color: #fff;
+  font-size: .75rem;
+  margin: 2%;
+  width:60px;
+  height: auto;
+  border: solid grey 1px;
   -webkit-border-radius: 8;
   -moz-border-radius: 3;
-  border-radius: 8px;
-  color: blanchedalmond;
-  font-size: 1rem;
-  background: salmon;
-  padding: 10px;
-  margin-left: 5%;
-  margin-right: 5%;
-  border: solid #fdd497 1px;
-  text-decoration: none; }
+  border-radius: 10px;
+}
 
 .btn:hover {
   background: #660066;
-  text-decoration: none; }
+  border: solid black 1px;
+  text-decoration: none;
+  color: #fff;
+}
 
 /* Medium and small screens (640px) */
 @media (min-width: 40rem) {
