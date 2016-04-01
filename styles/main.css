@@ -10,7 +10,7 @@ html {
   /*100 browser window*/
   background-color: #007984;
   font-family: "Roboto","Helvetica","sans-serif";
-  color: red; }
+}
 
 h1 {
   font-weight: 700;
@@ -49,7 +49,16 @@ h4 {
 }
 
 .modal-body{
-    color:red;
+    color:black;
+}
+
+input{
+    border: 1px solid #d5d5d5;
+    padding: 10px;
+    width: 250px;
+}
+input:hover{
+    border: 1px solid #007984;
 }
 
 img {
@@ -328,8 +337,9 @@ li {
   background: #007984;
   color: #fff;
   font-size: .75rem;
-  margin: 2%;
-  width:60px;
+  margin: auto;
+  padding-right:15px;
+  width: 60px;
   height: auto;
   border: solid grey 1px;
   -webkit-border-radius: 8;
