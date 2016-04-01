@@ -35,7 +35,7 @@ binChat.config(function($locationProvider, $stateProvider) {
  */
 binChat.run(["$cookies", "$uibModal", function ($cookies, $uibModal) {
    //condition to open model if ture
-    if($cookies.binChatCurrentUser || $cookies.binChatCurrentUser === " "){
+    if(!$cookies.binChatCurrentUser || $cookies.binChatCurrentUser === " "){
        //The modal opens with this page and conditions
        $uibModal.open({
            templateUrl:"/templates/myModalContent.html",
